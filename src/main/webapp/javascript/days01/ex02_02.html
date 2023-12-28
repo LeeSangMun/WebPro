@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body onload="window_init()">
+	<header>
+		<h1 class="main">
+			<a href="#">lsm Home</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+		javascript days01
+	</h3>
+	<div>
+		<pre class="code">
+			[html 콘텐츠를 변경]
+			시작태그
+			닫기태그
+			요소(Element)
+			내용(content)
+		</pre>
+		
+		<input id="txtContent" type="text" class="long" placeholder="content 입력" autofocus/>
+<!-- 		<button class="add" onclick="alert('asd')">실행</button> -->
+		<button class="add" onclick="printContent()">실행</button>
+		
+		<div id="demo">결과 : </div>
+	</div>
+	
+	<script>
+		// documnet.getElementById("demo");
+		var box = document.querySelector("#demo");
+		var txtbox = document.querySelector("#txtContent");
+		
+		// Then Project 플러그인 + js / jquery 자동완성
+		// txtbox.value = "내용";
+		// box.innerText += "내용";
+		// box.innerHTML += "<span style='color:red''><b>내용(content)</b></span>";
+		// box.innerText += "<span style='color:red''><b>내용(content)</b></span>";
+		
+		
+	</script>
+	
+	<script>
+		// js 함수 선언
+		function printContent() {
+			var content = txtbox.value;
+			/* console.log(content); */
+			box.innerText = "결과 : ";
+			box.innerText += "<span style='color:red'><b>"+ content +"</b></span>";
+			
+			/*
+			txtbox.value = "";
+			txtbox.focus();
+			*/
+			txtbox.select();
+		}
+		
+		function window_init() {
+			// txtbox.focus();
+		}
+	</script>
+	
+</body>
+</html>

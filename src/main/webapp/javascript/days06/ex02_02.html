@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">lsm Home</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			
+		</pre>
+	</div>
+	
+	<script>
+		const person = {
+				// property
+				firstname : "길동"
+				, lastname : "홍"
+				, age : 20
+				
+				// method
+				, print : function() {
+					return this.name + " / " + this.age;
+				}
+				/*
+				, cars : { // 중첩된 객체
+					car1 : "BMW"
+					, car2 : "KIA"
+				}
+				*/
+				, cars : [ //중첩된 배열
+					{ name : "k9", year:2020 }
+					, { name : "k5", year:2021 }
+				]
+		};
+		
+		// 5. 기존 객체에 새로운 속성 추가
+		person.eyeColor = "blue";
+		// alert(person.eyeColor)
+		
+		// 6. 객체의 속성을 삭제.
+		delete person.age;
+		// alert(person.age); // undefined
+		
+		// 7. 중첩된 객체
+		// person.cars.car1
+		// person.cars["car1"]
+		// person["cars"]["car1"]
+		
+		// 8. 메서드 호출
+		// alert(person.print());
+		
+		// 메서드의 선언(정의) 자체 반환
+		// alert(person.print);
+		
+		// 9. 기존 객체에 메서드 추가
+		person.name = function() {
+			return this.firstname + " " + this.lastname;
+		}
+		
+		// alert(person.name());
+	</script>
+	
+	<script>
+		// js 객체를 배열로 변환 : Object.values();
+		const arr = Object.values(person);
+		// alert(arr);
+	</script>
+	
+	<script>
+		// ㄱ. JSON.parse() : JSON String => js Obecjt 변환
+		// ㄴ. JSON.stringify() : js Object => JSON String 변환
+		let jsonPersonStr = JSON.stringify(person);
+		alert(typeof jsonPersonStr);
+		alert(jsonPersonStr);
+		
+	</script>
+	
+</body>
+</html>

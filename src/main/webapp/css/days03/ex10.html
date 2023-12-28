@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	div.center {
+		border: 3px solid green;
+		width: 300px;
+		margin: auto;
+		
+		/* 텍스트 가운데 정렬 */
+		text-align: center;
+	}
+	
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+	
+	.right {
+		width: 300px;
+		border: 3px solid #73ad21;
+		padding: 10px;
+		
+		/* float: right; */
+		position: absolute;
+		right: 0;
+	}
+</style>
+
+</head>
+<body>
+	<pre>
+		[블럭요소(div 등) - 가로, 세로 정렬]
+		
+		1. div 가운데 정렬 - margin: auto;
+		2. 요소 안의 텍스트를 가운데 정렬 - text-align: center;
+		3. 인라인 모드인 img를 가운데 정렬
+		4. 왼쪽, 오른쪽 정렬
+	</pre>
+	
+	<!-- 이미지는 인라인모드 -->
+	<img alt="" src="../images/paris.jpg" width="40%">
+	<!-- <img alt="" src="../images/paris.jpg" width="40%"> -->
+	
+	<div class="center">
+		<p>Hello World!</p>
+	</div>
+	<br>
+	<br>
+	<div class="right">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias ducimus reiciendis aliquid accusamus officia doloribus laborum? Molestias voluptates minus nihil earum iste porro. Vel voluptatibus hic eaque amet eveniet commodi?</div>
+</body>
+</html>

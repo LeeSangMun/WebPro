@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<style>
+	html, body {
+		padding: 0;
+		margin: 0;
+	}
+	
+	ul {
+		background-color: #444;
+		border: 2px solid gray;
+		list-style-type: none;
+		
+		margin: 0;
+		padding: 0;
+		
+		overflow: hidden;
+	}
+	
+	ul li {
+		/* border: 1px solid yellow; */
+	}
+	
+	ul li a {
+		color: white;
+		text-decoration: none;
+		
+		/* border: 1px solid red; */
+		/* width: 100%;  너비 x 이유 ? a : 인라인 모드*/
+		/* 블럭모드 변경 */
+		display: block;
+		text-align: center;
+		
+		padding: 16px;
+	}
+	
+	ul li a:hover {
+		color: orange;
+		background-color: #111;
+	}
+	
+	ul li:nth-child(1) {
+		background-color: red;
+	}
+	
+	ul li {
+		float: left;
+	}
+</style>
+</head>
+<body>
+	<ul>
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</body>
+</html>

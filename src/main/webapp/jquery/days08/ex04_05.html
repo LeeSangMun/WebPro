@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">moon</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			
+		</pre>
+		
+		<div>1</div>
+		<p>Lorem ipsum dolor.</p>
+		<div>2</div>
+		<p>Corporis dignissimos consequatur.</p>
+		<div>3</div>
+		<p>Autem assumenda quae.</p>
+		<p>Neque corrupti numquam.</p>
+		<p>Ipsa facere similique.</p>
+		<p>Consectetur repellat a.</p>
+		<p>Adipisci nemo non.</p>
+		<p>Voluptates obcaecati numquam!</p>
+		<p>Inventore accusamus ipsum.</p>
+		<p>Aut eos officia!</p>
+		
+	</div>
+	
+	<script>
+		$(function() {
+			// :eq(0부터 시작)
+			$("p:lt(4)").css("background-color", "red");
+			$("p:eq(4)").css("background-color", "yellow");
+			$("p:gt(4)").css("background-color", "blue");
+		});
+	</script>
+	
+</body>
+</html>

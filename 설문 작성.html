@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문 작성</title>
+    <style>
+        html, body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a#logout {
+            display: block;
+            text-align: right;
+        }
+
+        #container {
+            margin: auto;
+            width: 80%;
+            margin-top: 50px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+            width: 100%;
+            border-top: 5px solid rgb(167, 164, 164);
+        }
+
+        td {
+            padding: 7px;
+            border: 1px solid rgb(221, 221, 221);
+        }
+
+        tr td:nth-child(1) {
+            text-align: center;
+            width: 17%;
+            font-weight: bold;
+            grid-column: 1/4;
+        }
+
+        input[type=text] {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid rgb(221, 221, 221);
+            width: 90%;
+        }
+
+        input[type=submit], input[type=reset] {
+            border: none;
+            background-color: gray;
+            color: white;
+            padding: 2px 7px;
+            margin-top: 10px;
+            opacity: 0.6;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        input[type=submit]:hover, input[type=reset]:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        #container2 {
+            text-align: right;
+        }
+
+        ol {
+            padding-left: 20px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <a id="logout" href="#">로그아웃</a>
+    <div id="container">
+        <div><b>▶ 설문 작성</b></div>
+        <form action="">
+            <table>
+                <tr>
+                    <td>질문</td>
+                    <td><input type="text" placeholder="질문을 입력해주세요"></td>
+                </tr>
+                <tr>
+                    <td>시작일</td>
+                    <td>
+                        <select>
+                            <option value="">2006</option>
+                        </select>년
+                        <select>
+                            <option value="">3</option>
+                        </select>월
+                        <select>
+                            <option value="">1</option>
+                        </select>일
+                    </td>
+                </tr>
+                <tr>
+                    <td>종료일</td>
+                    <td>
+                        <select>
+                            <option value="">2006</option>
+                        </select>년
+                        <select>
+                            <option value="">5</option>
+                        </select>월
+                        <select>
+                            <option value="">1</option>
+                        </select>일
+                    </td>
+                </tr>
+                <tr>
+                    <td>항목수</td>
+                    <td>
+                        <select onchange="addOption()" name="" id="optionCnt" value="">
+                            <option value="1">1개</option>
+                            <option value="2">2개</option>
+                            <option value="3">3개</option>
+                            <option value="4">4개</option>
+                            <option value="5">5개</option>
+                            <option value="6">6개</option>
+                            <option value="7">7개</option>
+                            <option value="8">8개</option>
+                            <option value="9">9개</option>
+                            <option value="10">10개</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>항목</td>
+                    <td>
+                        <ol id="option">
+                            <li><input type="text"></li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+            <div id="container2">
+                <input type="submit" value="확인">
+                <input type="reset" value="취소">
+            </div>
+            
+        </form>
+        
+    </div>
+
+    <script>
+        function addOption() {
+            var optionCnt = document.getElementById("optionCnt");
+            var option = document.getElementById("option");
+            var cnt = optionCnt.value;
+            while(option.firstChild)  {
+                option.removeChild(option.firstChild);
+            }
+
+            for (let i = 0; i < cnt; i++) {
+                var li = document.createElement("li");
+                var input = document.createElement("input");
+                input.type = "text";
+                li.appendChild(input);
+                option.appendChild(li)
+            }
+        }
+    </script>
+</body>
+</html>

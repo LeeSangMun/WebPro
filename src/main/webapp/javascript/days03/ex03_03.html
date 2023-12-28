@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">lsm Home</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			[js 함수 호출방법]
+			1. 이벤트 발생
+			2. js 코딩으로 함수 호출
+			3. 자체 호출 (함수 클로저)
+				함수 표현식은 "자기 호출" 생성.
+				자체 호출 표현식은 호출하지 않아도
+				자동으로 실행된다.
+				(주의) 함수 표현식을 나타내기 위해 괄호를 붙여야한다.
+		</pre>
+	</div>
+	
+	<script>
+		/*
+		const test = function(a, b) {
+			alert("익명함수 표현식")
+		}
+		
+		test();
+		*/
+	</script>
+	
+	<script>
+		/*
+		// 자체 호출 함수
+		(function (a, b) {
+			alert("익명 함수 표현식")
+		})();
+		*/
+	</script>
+	
+	<script>
+		// js에서 함수는 객체이다.
+		function test() {
+			alert("test");
+		}
+		
+		alert(test.toString());
+		// alert(typeof test);	// function -> object
+		// alert(typeof "문자열");
+		// alert(typeof 100);
+	</script>
+	
+</body>
+</html>

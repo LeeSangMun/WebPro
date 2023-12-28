@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">lsm Home</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			[js 문자열 메서드]
+			1. split(pattern)
+		</pre>
+	</div>
+	
+	<script>
+		/*
+		var text = "hello world";
+		console.log(text.charAt(0))
+		console.log(text[0])
+		*/
+	</script>
+	
+	<script>
+		// padStart(), padEnd() ES2017
+		/*
+		var no = "5";
+		alert(no.padStart(4, "0"));
+		*/
+		
+		var no = 5;
+		// js number -> string 형변환
+		// alert(String(no).padStart(4, "0"));
+		
+		//no.toString().padStart(4, "0");
+	</script>
+	
+	<script>
+		/*
+		var txt1 = "hello";
+		var txt2 = "world";
+		var txt = txt1 + txt2;
+		txt1.concat(txt2);
+		*/
+	</script>
+	
+	<script>
+		var txt = "Admin";
+		txt.toUpperCase();
+		txt.toLowerCase();
+	</script>
+	
+	<script>
+		// text(), replaceAll()
+		
+		var txt = "txt = txt1.concat(txt2);"
+		var searchword = "txt";
+		var index = txt.indexOf(searchword);
+		// alert(index); // 0
+		index = txt.indexOf(searchword, index + searchword.length);
+		// alert(index); // 6
+		
+		/*
+		var newTxt = txt.replace(searchword, "xxx");
+		//alert(newTxt); // xxx1.concat(txt2);
+		*/
+		
+		// ES2021 추가 replaceAll()
+		/*
+		var newTxt = txt.replaceAll(searchword, "yyy");
+		alert(newTxt); // yyy1.concat(yyy2);
+		*/
+		
+		/*
+		var txt = "txt = txt1.concat(txt2);"
+		searchword = "Txt";
+		searchword = /txt/i;
+		// alert(txt.replace(searchword, "xxx"));
+		// alert(txt.replaceAll(searchword, "xxx"));
+		*/
+		
+	</script>
+	
+	<script>
+		// js trim() trimStart() trimEnd()
+		var txt = "    hello    ";
+		// alert(`[${txt}]`);
+		//alert(`[${txt.trim()}]`);
+		// alert(`[${txt.trimStart()}]`);
+		// alert(`[${txt.trimEnd()}]`);
+	</script>
+	
+	<script>
+		let rrn = "821023-1700001";
+		
+		// slice(), substring(), substr()
+		// 1) slice(from, [to])
+		
+		let year = rrn.slice(0, 2);
+		let month = rrn.slice(2, 4);
+		let day = rrn.slice(4, 6);
+		// alert(`${year}.${month}.${day}`)
+		
+		
+		// slice는 음수를 줄 수 있다.
+		// alert(rrn.slice(-7))
+		
+		// 2) substring()
+		year = rrn.substring(0, 2)
+		month = rrn.substring(2, 4);
+		day = rrn.substring(4, 6);
+		// alert(`> ${year}.${month}.${day}`)
+		
+		// 3) substr
+		year = rrn.substr(0, 2)
+		month = rrn.substr(2, 2);
+		day = rrn.substr(4, 2);
+		alert(`>> ${year}.${month}.${day}`)
+		
+	</script>
+	
+</body>
+</html>

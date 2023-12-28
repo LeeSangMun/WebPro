@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="ex02_style.css" />
+</head>
+<body>
+	<pre>
+		[CSS]
+		- Cascading Style Sheets 약어
+			계단식
+			떨어뜨리다
+			작은폭포
+			단계적으로 행하다.
+		- html 화면 구성 + 스타일 지정하는 언어
+		- 유지, 보수 용이
+			ㄴ 여러 웹 페이지로 구성 + 스타일 일괄적으로 관리
+			
+		- 외부 스타일 시트(.css) 사용
+			ㄴ 장점 : 여러 웹 페이지(전체 웹 사이트)에 적용. 
+			외부 자바스크립트 파일(.js) 사용
+		
+		- 다양한 장치의 화면크기, 레이아웃 제어
+			ㄴ 인쇄 스타일
+			ㄴ 미디어 스타일 적용
+		
+		- CSS 형식 
+			스타일을 적용할 대상(선택자, selector) {
+				적용할 스타일;
+				속성명 : 속성값;
+				주의할 점은 속성값의 단위는 꼭 붙인다.
+					속성값이 0일때는 단위 생략 가능
+			}
+	</pre>
+	
+	<pre>
+		[JQuery, CSS] 의 선택자(selector)
+		1) 태그명, #아이디, .클래스
+		2) ex03.html
+		
+		[css 특이성]
+		- 동일한 요소를 가리키는 두 개 이상의 CSS 규칙이 있는 경우 
+		가장 높은 특이성을 가진 선택자에 의해 css 적용된다.
+		- 특이성 == 스타일 적용  점수 / 순위
+		태그명				1점
+		클래스명			10점
+		아이디명			100점
+		태그명.클래스명	11점
+		인라인식 css 1000점
+		p.box.first 1+10+10 = 21점
+		
+		#navi div.#deo 100 + 1 + 100 201점
+		
+		- 한 가지 예외 존재한다.
+			!important
+			
+		- 1) 인라인 CSS 적용 방식
+		- 2) 내부 / 외부 CSS 적용 방식
+	</pre>
+	
+</body>
+</html>

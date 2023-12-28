@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">lsm Home</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			[js 클래스]
+			1. ES6 js 클래스 도입.
+			2. class 키워드
+			3. constructor 생성자 메서드를 추가.
+			4. js 클래스 선언 형식
+				class 클래스명 {
+					constructor() {
+					}
+				}
+		</pre>
+	</div>
+	
+	<script>
+		class Car {
+			// 생성자 : 필드 초기화
+			constructor(name, year) {
+				// 속성 초기화
+				this.name = name;
+				this.year = year;
+			}
+		
+			// 메서드 선언
+			age() {
+				const now = new Date();
+				return now.getFullYear() - this.year;
+			}
+			
+			/*
+			age(year) {
+				return year - this.year;
+			}
+			*/
+		}
+		
+		const car1 = new Car("BMW", 2020);
+		const car2 = new Car("KIA", 2023);
+		
+		alert(car1.name);
+		alert(car1.age());
+		
+	</script>
+</body>
+</html>

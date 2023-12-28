@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	/* 링크 태그는 4가지 상태가 있다 */
+	/* : 의사 클래스 */
+	
+	/* 방문하지 않은 상태 */
+	a:link {
+		color: red;
+		background-color: yellow; 
+		text-decoration: none;
+		padding: 14px 25px;
+		display: inline-block;
+		text-align: center;
+	}
+	
+	/* 방문한 상태 */
+	a:visited {
+		color: lightgreen;
+		background-color: cyan;
+		text-decoration: none;
+	}
+	
+	/* 사용자 마우스 올려 놓은 상태 */
+	a:hover {
+		color: hotpink;
+		background-color: lightgreen;
+		text-decoration: underline;
+	}
+	
+	/* 클릭한 상태 */
+	a:active {
+		color: blue;
+		background-color: hotpink;
+		text-decoration: underline;
+	}
+	
+</style>
+
+<style>
+	div {
+		border: 1px solid red;
+	}
+	
+	p {
+		border: 1px solid blue;
+	}
+	
+	* {
+		padding: 20px;
+	}
+	
+	a {
+		font-size: 20px;
+	}
+	
+	/* 요소 요소 관계 */
+	/* div 안에 있는 후손 a */
+	/* div a { */
+	div > a {
+		font-size: 40px;
+		color: black;
+	}
+	
+	/* div 바로 뒤에 오는 p 형재 관계 */
+	div + p {
+		background-color: red;
+	}
+	
+	/*  */
+	p ~ div {
+		border-width: 10px;
+	}
+</style>
+
+</head>
+<body>
+	<h3>ex03.html</h3>
+	
+	<a href="#">Lorem.</a>
+	<a href="#">Amet.</a>
+	<a href="#">Ut!</a>
+	
+	<div>
+		1111
+		<a href="#">xxx</a>
+		<p>2222<a href="">yyy</a></p>
+	</div>
+	
+	<p id="p1" class="second">Lorem.</p>
+	<p class="second">Voluptatibus?</p>
+	<p>Maxime.</p>
+	
+	<div class="second">Lorem.</div>
+	<div class="second">Architecto.</div>
+	<div>Nesciunt?</div>
+</body>
+</html>

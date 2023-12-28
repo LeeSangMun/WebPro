@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">lsm Home</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+		javascript days01
+	</h3>
+	
+	<xmp class="code">
+		1. resources > cdn-main > example.css
+		2 link 추가 : example.css
+			<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+		3. script 추가 : example.js
+			<script src="/webPro/resources/cdn-main/example.js"></script>
+	</xmp>
+	
+	<div>
+		<pre class="code">
+			:root { ... } // 전역변수
+			
+			background-color: var(--back-color);
+			
+			[css 변수 선언 + 사용]
+			- 지역변수, 전역변수 선언 가능 0
+			- var()함수 : css 변수의 값을 할당.
+			
+			- DOM에서 css 변수 사용 0
+			- js 변수 변경 가능, 미디어 쿼리 변수 변경 가능
+		</pre>
+		
+		<xmp class="code">
+			body { background-color: #1e90ff; }
+
+			h2 { border-bottom: 2px solid #1e90ff; }
+			
+			.container {
+			  color: #1e90ff;
+			  background-color: #ffffff;
+			  padding: 15px;
+			}
+			
+			button {
+			  background-color: #ffffff;
+			  color: #1e90ff;
+			  border: 1px solid #1e90ff;
+			  padding: 5px;
+			}
+		</xmp>
+		
+		<xmp class="code">
+			- 코드 가독성 -> 유지 보수 용이
+			
+			전역 변수 선언
+			:root {	/* css selector */
+				--변수명:값; 
+				--변수명:값;
+				--blue:#1e90ff;
+				--white:#ffffff;
+			}
+		
+			body { background-color: var(--blue); }
+
+			h2 { border-bottom: 2px solid var(--blue); }
+			
+			.container {
+			  color: var(--blue);
+			  background-color: var(--white);
+			  padding: 15px;
+			}
+			
+			button {
+			  전역변수 --blue 재정의
+			  -- blue: #0000ff; 지역변수
+			  -- button-blue:#0000ff; 새로운 지역변수
+			  background-color: var(--white);
+			  color: #1e90ff;
+			  border: 1px solid var(--blue);
+			  padding: 5px;
+			}
+		</xmp>
+		
+		<pre class="code">
+			[js 변수 변경]
+			:root {
+				--blue:#1e90ff;
+				--white:#ffffff;
+			}
+			
+			var r = document.querySelector(":root");
+			r.style.setProperty("--blue", "green");
+			
+			// 설정된 값을 읽어 올 때
+			var color = r.getProperty("--blue");
+			
+		</pre>
+		
+		<pre class="code">
+			.container {
+				--fontsize:25px;
+			}
+			
+			div.container {
+				// 
+				// 
+				//
+				font-size: var(--fontsize);
+			}
+			
+			[미디어 쿼리 --fontsize 변수 변경]
+			@media only screen nad (max-width:500px) {
+				.container {
+					--fontsize: 15px;
+				}
+			}
+		</pre>
+		
+		
+	</div>
+</body>
+</html>

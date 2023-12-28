@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+</head>
+<body>
+	<h3>ex07.html - img, [map, area]</h3>
+	<pre>
+		1. map(지도) - 이미지에 클릭 가능한 영역을 만들 수 있다.
+		2. map - 이미지 맵
+			area - 클릭 가능한 영역
+		3. 모든 이미지를 이미지맵으로 사용할 수 있다.
+		4. shape : rect, circle, poly(다각형), default(전체지역)
+		5. 클릭한 영역에 따라 다른 작업을 수행할 수 있다.
+		6. usemap 속성 + map 태그
+	</pre>
+	
+	<img alt="work" src="../images/workplace.jpg" usemap="#workmap">
+	<map name="workmap">
+		<area alt="computer" href="ex07_computer.html" shape="rect" coords="34,44,270,350">
+		<area alt="phone" href="ex07_phone.html" shape="rect" coords="290,172,333,250">
+		<area alt="coffee" href="ex07_coffee.html" shape="circle" coords="337,300,44">
+	</map>
+</body>
+</html>

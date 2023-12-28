@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	button {
+		background-color: purple;
+		color: white;
+		display: inline-block;
+		padding: 5px;
+		border: none;
+		opacity: 0.6;
+		border-radius: 2px;
+	}
+</style>
+
+</head>
+<body>
+	<button>마우스 롤오버 효과</button>
+	<button>마우스 롤오버 효과</button>
+	<button>마우스 롤오버 효과</button>
+	
+	<script>
+		/* $("button")
+		.mouseover(function() {
+			$(this).css("opacity", "1");
+		}).mouseout(function() {
+			$(this).css("opacity", "0.6");
+		}); */
+		
+		$("button").hover(
+			function() { // mouseover 이벤트
+				$(this).css("opacity", "1");
+		}, function() { // mouseout 이벤트
+			$(this).css("opacity", "0.6");
+		});
+	</script>
+</body>
+</html>

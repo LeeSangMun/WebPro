@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">상문 공주's 궁전</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			
+		</pre>
+		
+		<h2>HTML DOM</h2>
+		<p>Displaying document.body</p>
+		
+		<p id="demo" style="border: 1px solid gray">demo</p>
+		
+	</div>
+	
+	<script>
+		// alert(document.querySelector("h2").parentElement.lastElementChild.innerHTML);
+		let element = document.querySelector("h2").parentElement.lastElementChild;
+		
+		/*
+		// 탐색한 노드에 대한 정보를 얻어와서 확인
+		console.log(element.nodeType);
+		console.log(element.nodeName);
+		console.log(element.nodeValue);
+		*/
+		
+		let demoFirstChild = element.firstChild;
+		console.log(demoFirstChild.nodeValue)
+		console.log(demoFirstChild.nodeName)
+		
+		let nodeList = element.childNodes;
+		alert(nodeList.length);
+		alert(nodeList[0].nodeValue);
+		alert(nodeList[0].nodeName);
+		
+	</script>
+</body>
+</html>

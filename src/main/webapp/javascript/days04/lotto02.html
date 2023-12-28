@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">lsm Home</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			
+		</pre>
+
+		로또 게임 횟수 선택 : 
+		<select name="" id="lotto">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+		<br>
+		<button>로또 번호 발생기</button>
+		<p id="demo"></p>
+	</div>
+	
+	<script>
+		let lotto;
+		let select = document.querySelector("#lotto");
+		
+		document.querySelector("button").onclick = function() {
+			let content = "<ul>";
+			
+			for (let i = 0; i < select.value; i++) {
+				mkLotto();
+				content += "<li>"
+				lotto.forEach(lotto => {
+					content += ` ${lotto} `;
+				});
+				content += "</li>";
+			}
+
+			content += "</ul>";
+			document.querySelector("p#demo").innerHTML = content;
+		};
+
+		function mkLotto() {
+			lotto = [];
+			while(lotto.length < 6) {
+				const n = parseInt(Math.random()*45+1);
+				if(!lotto.includes(n)) {
+					lotto.push(n);
+				}
+			}
+		}
+	</script>
+</body>
+</html>

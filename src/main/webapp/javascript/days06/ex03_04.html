@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">lsm Home</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			call() 	: 다른 객체의 메서드를 불러서 처리할 수 있는 함수
+			apply() 	: 다른 객체의 메서드를 불러서 처리할 수 있는 함수
+			차이점 : 매개변수가 있는 경우
+				ㄴ call() 		- 매개변수 , 나열
+				ㄴ apply() 	- 매개변수 배열 사용
+		</pre>
+	</div>
+	
+	<script>
+		var person1 = {
+				name : "hong"
+				, age : 20
+				/*
+				, print : function() {
+					return this.name + " / " + this.age;
+				}
+				*/
+		};
+		
+		var person2 = {
+				name : "admin"
+				, age : 30
+				/*
+				, print : function() {
+					return this.name + " / " + this.age;
+				}
+				*/
+		};
+		
+		// alert(person1.print());
+		// alert(person2.print());
+		
+		var person = {
+				println : function() {
+					return this.name + " / " + this.age;
+				}
+				, printf : function(city, eyeColor) {
+					return this.name + " / " + this.age 
+					+ " / " + city + " / " + eyeColor;
+				}
+		}
+		
+		// alert(person1.print());
+		
+		// 매개변수가 없는 println() 함수를
+		// 호출할 때는 call(), apply() 똑같다.
+		// alert(person.println.call(person1));
+		// alert(person.println.apply(person2));
+		
+		// printf(city, eyeColor)
+		// 매개변수가 있는 printf(city, eyeColor) 함수를 
+		// 호출할 때 call(), apply() 차이가 있다.
+		// alert(person.printf.call(person1, "seoul", "blue"));
+		
+		let arr = ["seoul", "green"]
+		// alert(person.printf.apply(person1, arr));
+		// person.printf.apply(person1, "seoul", "blue");
+	</script>
+	
+	<script>
+		// call(), apply()
+		var m = [3,5,2,4,1];
+		// var max = Math.max(3, 5, 2, 4, 1);
+		var max = Math.max.apply(null, m);
+		// alert(max);
+	</script>
+	
+	<script>
+		// call(), apply()
+		// bind() 묶다, 감싸다
+		// 	 ㄴ 다른 객체의 메서드를 내 객체 묶다.(빌려오겠다.)
+		alert(person.printf.bind(person1)());
+		
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<!-- <link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+<style>
+.descendants * { 
+  display: block;
+  border: 2px solid lightgrey;
+  color: lightgrey;
+  padding: 5px;
+  margin: 15px;
+}
+</style>
+
+</head>
+<body>
+	
+	
+	<div class="descendants" style="width:500px;">div (current element) 
+	  <p class="first">p (child)
+	    <span>span (grandchild)</span>   
+	  </p>
+	  <p class="second">p (child)
+	    <span>span (grandchild)</span>
+	  </p> 
+	</div>
+	
+	
+	<script>
+		$("div.descendants")
+			// .children() // 직계자식
+			// .children("p.first")
+			// .find("*") // 모든 자식(후손)
+			.find("span")
+			.css({
+				"color" : "red"
+				, "border" : "2px solid red"
+			})
+	</script>
+</body>
+</html>

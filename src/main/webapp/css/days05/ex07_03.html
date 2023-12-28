@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	.flex-container {
+		background-color: green;
+		display: flex;
+		/* flex-direction: row-reverse; */
+		/* flex-wrap: nowrap; */
+		/* flex-flow: row nowrap; 약식 */
+		
+		/* 컨테이너 중앙 정렬 */
+		/* justify-content: flex-start; 기본값 */
+/* 		justify-content: flex-end; */
+/* 		justify-content: center; */
+
+		/* 플렉스 항목의 앞, 뒤, 항목 사이, 공백-주위 */
+/* 		justify-content: space-around; */
+
+		/* 플렉스 항목의 항목 사이, 공백-주위 */
+		justify-content: space-between;
+	}
+	
+	.flex-container > div {
+		background-color: #f1f1f1;
+		margin: 10px;
+		font-size: 30px;
+		width: 100px;
+		text-align: center;
+	}
+</style>
+
+</head>
+<body>
+	<div class="flex-container">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">lsm Home</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			[js 모듈]
+			- js의 모듈을 사용을 사용하면 코드를
+			별도의 파일로 나눠서 관리.
+			- 코드의 유지, 보수 관리 용이
+			- import(수입) / export(수출) 문 사용
+			- 변수 : ex15_person.js
+			  함수 : ex15_message.js
+			
+		</pre>
+		
+		<p id="demo"></p>
+	</div>
+	
+	
+	<script type="module">
+		// ex15.html 안에 message() 함수 선언
+		import message from "./ex15_message.js";
+		$("#demo").html(message());
+ 	</script>
+ 	
+ 	<script type="module">
+ 		import {name, age} from "./ex15_person.js";
+		let content = `${name} / ${age}`;
+		$("#demo").html(content);
+ 	</script>
+ 	
+</body>
+</html>

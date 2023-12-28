@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+<style>
+	.myDiv {
+		background: #f1f1f1;
+		text-align: center;
+		border: 1px solid #d3d3d3;
+		position: absolute;
+		z-index: 9;
+	}
+	
+	.myDivHeader{
+		padding: 10px;
+		cursor: move;
+		z-index: 10;
+		background-color: #2396F3;
+		color: #fff;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">lsm Home</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			
+		</pre>
+		
+		<div id="myDiv1" class="myDiv">
+			<div id="myDiv1Header" class="myDivHeader">Click Here</div>
+			<p>Lorem.</p>
+			<p>Saepe.</p>
+			<p>Dicta!</p>
+		</div>
+		
+		<div id="myDiv2" class="myDiv">
+			<div id="myDiv2Header" class="myDivHeader">Click Here</div>
+			<p>Lorem.</p>
+			<p>Saepe.</p>
+			<p>Dicta!</p>
+		</div>
+		
+	</div>
+	
+	<script>
+		function draggable(elemt) { // 상위 함수
+			
+			// 드래그할 요소의 현재 위치값 저장 변수
+			// 지역변수인 동시에 전역변수(폐쇄적으로)
+			let elemtX = 0, elemtY = 0;
+			// 움직인 거리 저장할 변수
+			let moveX = 0, moveY = 0;
+			
+			if(document.getElementById(elemt.id + "Header")) {
+				document.getElementById(elemt.id + "Header").onmousedown = dragMouseDown
+			}
+			
+			// mousedown
+			function dragMouseDown(e) { // 중첩 함수
+				e = window.event || e
+				// console.log(e.clientX + "/" + e.clientY);
+				elemtX = e.clientX;
+				elemtY = e.clientY;
+				
+				document.onmousemove = elementDrag;
+				document.onmouseup = closeDragElement;
+			}
+		
+			// mousemove
+			function elementDrag() { // 중첩 함수
+				e = window.event || e
+				// console.log(e.clientX + "//" + e.clientY);
+				moveX =  e.clientX - elemtX;
+				moveY = e.clientY - elemtY;
+				
+				elemt.style.left = (elemt.offsetLeft + moveX) + "px";
+				elemt.style.top = (elemt.offsetTop + moveY) + "px";
+				
+				elemtX = e.clientX;
+				elemtY = e.clientY;
+			}
+			
+			// mouseup
+			function closeDragElement() { // 중첩 함수
+				document.onmousemove = null;
+				document.onmouseup = closeDragElement;
+			}
+		}
+	
+		draggable(document.getElementById("myDiv1"));
+		draggable(document.getElementById("myDiv2"));
+	</script>
+	
+</body>
+</html>

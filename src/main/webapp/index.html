@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index</title>
+<style>
+    /*
+	body {
+		margin: 20% 45%;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	#container2 {
+		position: relative;
+	}
+	
+	.large {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,0.4);
+		color: white;
+		cursor: pointer;
+	}
+	
+	img {
+		width: 200px;
+		height: 150px;
+	}
+	
+	img:hover {
+		transform: scale(1.2);
+	}
+	
+	#phrases {
+		position: relative;
+		color: white;
+		opacity: 0.7;
+		background-color: #646FD4;
+		border-radius: 5px;
+		text-align: center;
+		margin-bottom: 20px;
+		padding: 10px;
+		white-space: nowrap;
+	}
+	
+	#container:hover #phrases {
+		opacity: 1;
+	}
+	
+	#phrases::after {
+		content: "";
+		position: absolute;
+		right: 50px;
+		top: 41px;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 15px solid #646FD4;
+	}
+	
+	.gjkb {
+		width: 150px;
+		height: 150px;
+	
+		display: none;
+	}
+	
+	html:hover .gjkb {
+		display: block;
+	}
+    */
+
+/*
+		span {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        span:hover {
+            animation: anim 0.5s infinite;
+        }
+
+        @keyframes anim {
+            10% {transform: rotateY(180deg);}
+            20% {
+                transform: rotateY(-180deg);
+                font-size: 25px;
+            }
+            30% {transform: rotateY(180deg);}
+            40% {
+                transform: rotateY(-180deg);
+                font-size: 20px;
+            }
+            50% {transform: rotateY(180deg);}
+            60% {
+                transform: rotateY(-180deg);
+                font-size: 15px;
+            }
+            70% {transform: rotateY(180deg);}
+            80% {
+                transform: rotateY(-180deg);
+                font-size: 10px;
+            }
+            90% {transform: rotateY(180deg);}
+            100% {
+                transform: rotateY(-180deg);
+                font-size: 5px;
+            }
+        }
+        
+        /* div {
+            font-size: 25px;
+            color: black;
+            display: inline;
+        }
+
+        body {
+            position: relative;
+            background-image: url("images.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+        } */
+</style>
+<script type="text/javascript">
+	
+</script>
+</head>
+<body>
+	<div id="container">
+        <div id="phrases">밥 뭐 먹을래?</div>
+        <div id="container2">
+	        <img src="./images/did.png" alt="">
+	        <div class="large">+</div>
+        </div>
+    </div>
+    
+    <p>절대 화면에 마우스를 올리지마</p>
+    <img src="images/gjkb.jpg" alt="" class="gjkb"/>
+
+ 
+	<span><b>신기범</b></span>
+	<br>
+    <span><b>임경재</b></span>
+    <span>오늘 밥 뭐먹음</span>
+     
+    <script>
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+
+        function init() {
+            for(let i=0; i<30; i++) {
+                let div = document.createElement("div");
+                div.style.position = 'absolute'
+                div.style.left = Math.floor(Math.random()*width) + "px";
+                div.style.top = Math.floor(Math.random()*height) + "px";
+                div.innerHTML = "신기범";
+                document.getElementsByTagName("body")[0].appendChild(div);
+            }
+           
+        }
+
+        function moveSnow() {
+            let div = document.getElementsByTagName("div");
+            for(let i=0; i<div.length; i++) {
+                div[i].style.top = (parseInt(div[i].style.top) + 20) + "px";
+                if(parseInt(div[i].style.top) > height) {
+                    div[i].style.top = "0px";
+                }
+            }
+        }
+
+        init();
+        setInterval(moveSnow, 500);
+    </script> 
+</body>
+</html>

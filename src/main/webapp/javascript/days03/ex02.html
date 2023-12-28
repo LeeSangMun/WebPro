@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">lsm Home</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			[keyevent]
+			1) keydown 	- 키보드를 누를 때, 이벤트 취소 0, 기능키 체크 o, 대소문자 x
+			2) keypress 	- 키보드를 누를 때, 이벤트 취소 0, 기능키 체크 x, 대소문자 o
+			3) keyup 		- 키보드를 놓을 때, 이벤트 취소 x
+		</pre>
+		
+		<input type="text" id="txt01" class="full" 
+		onkeypress="txt01_keypress()"
+		onkeydown="txt01_keydown()"
+		onkeyup="txt01_keyup()" autofocus><br>
+		<input type="text" id="txt02" class="full"><br>
+		
+	</div>
+	
+	<script>
+		let txtbox01 = document.querySelector("#txt01");
+		let txtbox02 = document.querySelector("#txt02");
+	
+		function txt01_keyup() {
+			// event 객체
+			// alert(event.type); // keyup
+			// alert(event.keyCode); // 'a'  65, enter 13
+			// txtbox02.value = String.fromCharCode(event.keyCode);
+		}
+		
+		function txt01_keypress() {
+			// alert(txtbox01.value);
+			if (event.keyCode == 13) {
+				txtbox02.value = txtbox01.value;
+			}
+		}
+		
+		function txt01_keydown() {
+			alert(txtbox01.value)
+		}
+	</script>
+</body>
+</html>

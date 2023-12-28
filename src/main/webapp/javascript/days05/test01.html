@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">lsm Home</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			[문제] 주민등록번호 입력받아서
+			만나이, 세는 나이를 출력
+		</pre>
+		
+		<input type="text" id="rrn" value="870123-1700001" pattern="\d{6}-\d{7}" maxlength="14" />
+		<br>
+		<br>
+		<input type="radio" name="age" value="1" checked />만 나이
+		<input type="radio" name="age" value="0" checked />세는 나이
+		<br>
+		<br>
+		<button>나이 계산</button>
+		<p id="demo"></p>
+	</div>
+	
+	<script>
+		// 0,9 1800 1256 1900 3478 2000
+		$("button").click(function() {
+			$("#demo").html("");
+			
+			let rrn = $("#rrn").val();
+			let g = rrn.substr(7, 1);
+			
+			let year = Number(rrn.substr(0, 2));
+			let md = Number(rrn.substr(2,4));
+			let today = new Date();
+			
+			let tmd =Number((today.getMonth()+1) + "" + today.getDate())
+			
+			if(['1','2','5','6'].includes(g)) {
+				year += 1900;
+			} else if(['3','4','7','8'].includes(g)) {
+				year += 2000;
+			} else {
+				year += 1800;
+			}
+
+			let todayYear = new Date().getFullYear();
+			let age = todayYear - year;
+			if($(":radio:checked").val() == 1) {
+				if(md < tmd) {
+					age--;				
+				}
+			} else {
+				age++;
+			}
+			
+			$("#demo").html(age);
+		})
+	</script>
+</body>
+</html>

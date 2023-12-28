@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+<style>
+	div.block {
+		position: absolute;
+	    background-color: red;
+	    left: 0px;
+	    top: 130px;
+	    width: 60px;
+	    height: 160px;
+	    margin: 5px;
+	}
+</style>
+
+</head>
+<body>
+	<button id="go">Go</button>
+	<button id="stop">STOP!</button>
+	<button id="back">Back</button>
+	<button id="slideToggle">slideToggle()</button>
+
+	<div class="block"></div>
+
+	<script>
+		$("#go").click(function() {
+			$(".block")
+				.stop(true, false)
+				.animate({
+					left : "+=100px"
+				}, 5000)
+		})
+		
+		$("#stop").click(function() {
+			$(".block").stop(true, false);
+		})
+		
+		$("#back").click(function() {
+			$(".block")
+			.stop(true, false)
+			.animate({
+				left : "-=100px"
+			}, 5000)
+		})
+		
+		$("#slideToggle").click(function() {
+			$(".block")
+			.stop(true, false)
+			.slideToggle(5000)
+		})
+	</script>
+	
+</body>
+</html>

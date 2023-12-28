@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../../javascript/days08/cookie.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">moon</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			
+		</pre>
+		
+		<table border="1" style="background-color: white;width:400px;margin:0 auto">
+		   <tr>
+		     <td><img src="../../javascript/images/item01.gif" alt="" /></td>
+		     <td><img src="../../javascript/images/item02.gif" alt="" /></td>
+		     <td><img src="../../javascript/images/item03.gif" alt="" /></td>
+		  </tr>
+		  <tr>
+		     <td><input type="radio" checked="checked"  name="bgImages" id="item01" value="item01" />item01</td>
+		     <td><input type="radio" name="bgImages"  id="item02" value="item02" />item02</td>
+		     <td><input type="radio" name="bgImages" id="item03" value="item03" />item03</td>
+		  </tr>
+		  </table>
+		
+	</div>
+	
+	<script>
+		let cname = "bgimg"; // 쿠키 사용할 이름
+		let cvalue = "item01"; // 쿠키 값
+		let cpath = "/";
+		let expiresDays = 10; // 만료 시점 10일 후 제거
+		
+		/*
+		$(docuemnt).ready(function() {
+			
+		});
+		*/
+		
+		$(function() {
+			cvalue = getCookie(cname);
+			if (!cvalue) { // 쿠키가 없는 경우
+				cvalue = "item01";
+				setCookie(cname, cvalue, cpath, expiresDays);
+			} else { // 쿠키 존재하는 경우
+				// 그 라디오버튼을 체크하는 코딩 추가
+				$(`#${cvalue}`).prop("checked", true);
+			}
+			
+			$("body").css("background-image", `url(../../javascript/images/${cvalue}.gif)`);
+			
+			$(":radio[name=bgImages]").click(function(event) {
+				cvalue = $(this).val();
+				setCookie(cname, cvalue, cpath, expiresDays);
+				$("body").css("background-image", `url(../../javascript/images/${cvalue}.gif)`);
+			})
+		})
+		
+		// 쿠키이름 조회
+		function getCookie( cName ){
+		       let cValue ;       
+		       let cookies =  document.cookie;
+		        
+		       let cookieArr = cookies.split(   /;\s/  );
+		       cookieArr.forEach(function(elt, i, array) {
+		          let cnv =  elt.split("=");
+		          if( cnv[0] == cName){
+		             cValue =  unescape( cnv[1] );
+		             // break;
+		          }
+		       });
+		       
+		       if( cValue ) {
+		          return  cValue;
+		       }else{
+		          return null;
+		       }
+		        
+		    }
+	</script>
+	
+</body>
+</html>

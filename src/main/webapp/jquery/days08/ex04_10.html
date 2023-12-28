@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">moon</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			
+		</pre>
+		
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur esse quisquam alias quibusdam ex iusto impedit iste numquam. Adipisci totam mollitia minima delectus doloremque ipsum id culpa porro quibusdam sapiente.</p>
+		<p>Aut iure possimus <span>cupiditate</span> nam voluptatem voluptates dolor nemo consectetur unde ab? Distinctio expedita cupiditate nesciunt impedit totam ex porro iste nostrum? Facere sunt cupiditate pariatur numquam debitis harum doloremque.</p>
+		<p>Voluptate adipisci aperiam architecto minus optio voluptas sit est illo magnam dicta! Blanditiis consequatur numquam deleniti rem voluptatum dolore aliquid iure dolorum adipisci provident. Natus eius corrupti mollitia incidunt impedit.</p>
+		<p>Maiores rerum molestiae placeat eos nobis praesentium accusamus ab vel mollitia dignissimos. Quas soluta voluptatibus cumque eius eligendi praesentium magni itaque alias distinctio quidem repudiandae rerum quo ullam laboriosam quasi.</p>
+		<p>Laboriosam sequi porro nemo dolores vel voluptatem eligendi dignissimos consectetur quasi facilis sapiente in illum quo! Pariatur animi esse fugit saepe. Non laudantium itaque praesentium quisquam ipsa minus sed fugiat.</p>
+		
+	</div>
+	
+	<script>
+		// $("p").css("color", "red")
+		// $("p:has(span)").css("color", "blue")
+		// $("p").has("span").css("color", "green")
+		// $("p:contains(eius)").css("color", "red")
+		
+		// p, span 를 가지고 있는 div태그
+		$("div:has(p, span)").css("border", "solid red")
+		
+		// h1을 가지고 있는 div태그를 제외한 div태그
+		$("div:not(:has(h1))").css("background-color", "yellow")
+	</script>
+	
+</body>
+</html>

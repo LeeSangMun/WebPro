@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="http://localhost/webPro/images/SiSt.ico">
+<link rel="stylesheet" href="/webPro/resources/cdn-main/example.css" />
+<script src="/webPro/resources/cdn-main/example.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	span.material-symbols-outlined {
+		vertical-align: bottom;
+	}
+</style>
+
+<style>
+	table, th, td {
+		border: 1px solid gray;
+	}
+	
+	table#tblDept {
+		width: 50%;
+		margin: 0 auto;
+	}
+</style>
+
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#">lsm Home</a>
+		</h1>
+		<ul>
+			<li><a href="">로그인</a></li>
+			<li><a href="">회원가입</a></li>
+		</ul>
+	</header>
+	<h3>
+		<span class="material-symbols-outlined">view_list</span>
+	</h3>
+	<div>
+		<pre class="code">
+			
+		</pre>
+		
+		<table id=tblDept>
+			<thead>
+				<tr>
+					<th><input type="checkbox" class="all" />모두 선택</th>
+					<th>Name</th>
+					<th>Loc</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="checkbox" id="ck1"/></td>
+					<td>Nulla.</td>
+					<td>Quis!</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" id="ck2"/></td>
+					<td>Harum.</td>
+					<td>Voluptas.</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" id="ck3"/></td>
+					<td>Dolorem.</td>
+					<td>Tempore.</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" id="ck4" /></td>
+					<td>Modi.</td>
+					<td>Vel?</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3" align="center">
+						<button>선택 확인</button>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+		
+		<p id="demo"></p>
+		
+	</div>
+	
+	<script>
+		$(":checkbox.all").click(function() {
+			// $("tbody :checkbox")
+			// $(":checkbox[id^=ck]")
+			
+			$(":checkbox:not(.all)").prop("checked", $(this).prop("checked"))
+			
+			$(":checkbox:not(.all)").click(function(event) {
+				let count = $(":checkbox:not(.all)").length;
+				let checkedCount = $(":checkbox:not(.all):checked").length;
+				$(":checkbox.all").prop("checked", count == checkedCount ? true : false);
+			}) 
+		})
+	</script>
+	
+	<script>
+		$("tfoot button").click(function(event) {
+			// alert($("tbody : checkbox:chedked").length)
+			let id, name;
+			$("p#demo").html("")
+			$("tbody :checkbox:checked").each(function(i, element) {
+				id = element.id;
+				// name = 
+				$("p#demo").html(function(index, oldhtml) {
+					// console.log(id);
+					// console.log($("<li></li>").text(id).outerHTML);
+					// return oldhtml + $("<li></li>").text(id).outerHTML;
+					return oldhtml + `<li>${id}</li>`;
+				})
+			})
+		}) 
+	</script>
+</body>
+</html>
